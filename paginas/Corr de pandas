@@ -1,0 +1,53 @@
+importar  streamlit  como  st
+importar  pandas  como  pd
+importar  numpy  como  np
+importar  seaborn  como  sns
+importar  matplotlib . pyplot  como  plt
+
+st . escriba ( """ MATRIZ DE CORRELACION""" )
+pandas  =  pd . read_csv ( 'ENCUESTA.csv' )
+st . marco de datos ( pandas )
+st . write ( """Cantidad de Filas y Columnas""" )
+    
+st . escribir ( """58 Columnas y 37 Filas""" )
+pandas _ tipos de d
+st . escribe ( """IMPUTACION DE DATOS NAn""" )
+
+pandas [ 'CREO EN TI' ] = pandas [ 'CREO EN TI' ]. reemplazar ( np . nan , 4 )
+pandas [ 'COLGANDO EN TUS MANOS' ] = pandas [ 'COLGANDO EN TUS MANOS' ]. reemplazar ( np . nan , 4 )
+pandas [ 'MAMIII' ] = pandas [ 'MAMIII' ]. reemplazar ( np . nan , 3 )
+pandas [ 'HEY MOR' ] = pandas [ 'HEY MOR' ]. reemplazar ( np . nan , 3 )
+pandas [ 'DANZA KUDURO' ] = pandas [ 'DANZA KUDURO' ]. reemplazar ( np . nan , 4 )
+pandas [ 'DESPECHA' ] = pandas [ 'DESPECHA' ]. reemplazar ( np . nan , 3 )
+pandas [ 'QUE MAS PUES' ] = pandas [ 'QUE MAS PUES' ]. reemplazar ( np . nan , 3 )
+pandas [ 'UN VERANO SIN TI' ] = pandas [ 'UN VERANO SIN TI' ]. reemplazar ( np . nan , 3 )
+pandas [ 'NINACHAY' ] = pandas [ 'NINACHAY' ]. reemplazar ( np . nan , 5 )
+pandas [ 'POR USTEDES' ] = pandas [ 'POR USTEDES' ]. reemplazar ( np . nan , 4 )
+pandas [ 'MATADOR' ] = pandas [ 'MATADOR' ]. reemplazar ( np . nan , 3 )
+pandas [ 'MONTONERO AREQUIPENO' ] = pandas [ 'MONTONERO AREQUIPENO' ]. reemplazar ( np . nan , 4 )
+pandas [ 'MALA TU' ] = pandas [ 'MALA TU' ]. reemplazar ( np . nan , 3 )
+pandas [ 'CON LA BRISA' ] = pandas [ 'CON LA BRISA' ]. reemplazar ( np . nan , 3 )
+pandas [ 'MI VIDA' ] = pandas [ 'MI VIDA' ]. reemplazar ( np . nan , 4 )
+pandas [ 'SIGNO DE LOS TIEMPOS' ] = pandas [ 'SIGNO DE LOS TIEMPOS' ]. reemplazar ( np . nan , 4 )
+pandas [ 'BLOODY MARY' ] = pandas [ 'BLOODY MARY' ]. reemplazar ( np . nan , 4 )
+pandas [ 'PROPUESTA INDECENTE' ] = pandas [ 'PROPUESTA INDECENTE' ]. reemplazar ( np . nan , 4 )
+st . marco de datos ( pandas )
+
+st . write ( """## tabla de correlacion de pandas""" )
+
+n  =  pandas [ pandas . columnas [ 1 :]]. a_numpy ()
+m  =  pandas [ pandas . columnas [ 0 ]]. a_numpy ()
+dataframe_pandas  =  pd . DataFrame ( n . T , columnas  =  m )
+matrix_correlacion  =  dataframe_pandas . corr ()
+matriz_correlacion
+
+def  tidy_corr_matrix ( corr_pandas ):
+    corr_pandas  =  corr_pandas . pila (). restablecer_índice ()
+    corr_pandas . columnas  = [ 'Datos1' , 'Datos2' , 'relacion' ]
+    corr_pandas  =  corr_pandas . loc [ corr_pandas [ 'Datos1' ] !=  corr_pandas [ 'Datos2' ], :]
+    corr_pandas [ 'que un hombre' ] =  np . abdominales ( corr_pandas [ 'relacion' ])
+    corr_pandas  =  corr_pandas . sort_values ​​( 'puede un hombre' , ascendente = Falso )
+    
+    volver ( corr_pandas )
+
+matriz_corr_ordenada ( m_corr_p ). cabeza ( 20 )
